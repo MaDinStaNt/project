@@ -1,0 +1,155 @@
+.nav_t { 
+width: 100%; 
+background: #FFFFFF url(../images/admin/navi_header_bgr.png) repeat-x left top; 
+border-left: #CFCCBE 1px solid; 
+text-align: left
+}
+
+.nav_c1 { 
+width: 5px
+}
+
+.nav_t TD { 
+border-bottom: #CFCCBE 1px solid; 
+border-right: #CFCCBE 1px solid; 
+padding: 0px 5px 0px 5px 
+}
+
+.nav_t_ttl { 
+height: 32px; 
+color: #FFFFFF; 
+}
+
+.nav_t_ttl A { 
+color: #FFFFFF; 
+text-decoration: none
+}
+
+.nav_t_ttl A:hover { 
+text-decoration: underline
+}
+
+.ui-widget-content .nav_t_ttl A {
+color:#FFFFFF;
+text-decoration: none
+}
+
+
+.ui-widget-content .nav_t_ttl A:hover {
+color:#FFFFFF;
+text-decoration: underline
+}
+
+.nav_t_r1 { 
+height: 19px; 
+background-color: #FFFFFF;
+height: 25px;
+}
+
+.nav_t_r2 { 
+height: 19px; 
+background-color: #EDEDED;
+height: 25px;
+}
+
+.nav_t_r_a { 
+height: 19px; 
+background-color: #FFFECA;
+color: #00344A;
+height: 25px;
+}
+
+.nav_t_r_act { 
+color: #7D7A68;
+height: 25px;
+}
+
+.nav_t_r { 
+color: #7D7A68;
+height: 25px;
+}
+
+.nav_t_r_a_light { 
+height: 19px; 
+background-color: #E6F0FB; 
+color: #FFFFFF;
+height: 25px;
+}
+
+.hl {
+color: #FF7800;
+}
+
+.navp { 
+padding-top: 5px
+}
+
+.nav_top { 
+background: url(../images/admin/navi_header_bgr.png) no-repeat right top
+}
+
+.navttl { 
+color: #FFFFFF; 
+height: 32px
+}
+
+.navttl_p { 
+width: 13px
+}
+
+.navttl A { 
+color: #FFFFFF; 
+text-decoration: none
+}
+
+.navttl A:hover { 
+text-decoration: underline
+}
+
+.navttl TD { 
+border: none; 
+padding: 0px 0px 0px 0px;
+}
+
+.t_cl1_ttl {
+color: #FFFFFF; 
+padding: 0px 0px 0px 10px; 
+background: url(../images/admin/navi_header_bgr.png) no-repeat left top;
+height: 32px;
+}
+
+.nav_row {
+height: 25px;
+}
+
+.nav-butt {
+padding: 7px 3px 7px 3px;
+}
+
+.nav-butt-img {
+padding: 5px 3px 5px 3px;
+}
+
+.nav-butt A:link, .nav-butt A:visited {
+color: #496E56;
+}
+
+.accent {
+color: #496E56; 
+font-weight: bold;
+}
+
+.navi_title {
+padding-bottom: 7px;
+padding-top: 7px;
+}
+
+.page_selected {
+background-color: #496E56; 
+color: #FFF;
+font-weight: bold;
+padding-right: 3px;
+padding-left: 4px;
+padding-top: 3px;
+padding-bottom: 3px;
+}

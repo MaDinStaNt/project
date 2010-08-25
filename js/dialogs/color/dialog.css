@@ -1,0 +1,49 @@
+/* CSS Document */
+.ColorSelectorTitle{
+	background: #e3e3c7;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:larger;
+	font-weight:bold;
+	color:#660000;
+	height:30px;
+	padding-left:15px;
+	padding-right:15px;
+	vertical-align:middle;
+}
+.ColorSelectorFooter{
+	background: #e3e3c7;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:larger;
+	font-weight:bold;
+	color:#660000;
+	height:30px;
+	padding-left:15px;
+	padding-right:15px;
+	padding-top:10px;
+	vertical-align:middle;
+	height:100%;
+}
+
+
+body{
+	padding:0px;
+	margin:0px;
+	background: #e3e3c7;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:smaller;
+}
+.content{
+	height:100%;
+	background:#f1f1e3;
+}
+
+.ColorTable{
+	font-size:1px;
+}
+.ColorCell{
+	width:15px;
+	height:15px;
+}
+#hicolor { height: 74px ; width: 74px ; border-width: 1px ; border-style: solid ; }
+#selhicolor		{ height: 20px ; width: 74px ; border-width: 1px ; border-style: solid ; }
+#selcolor		{ width: 75px ; height: 20px ; margin-top: 0px ; margin-bottom: 7px ; }

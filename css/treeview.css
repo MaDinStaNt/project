@@ -1,0 +1,75 @@
+.tree_out {
+	font-family:Tahoma,Arial,Helvetica,sans-serif;
+	font-size:12px;
+}
+/* TreeView */
+
+/*
+               , A.treeViewSel:link
+               , A.treeViewSel:visited
+               , A.treeView:hover
+*/
+A.treeView:link
+{
+        color: #315A8C;
+        text-decoration: none;
+}
+
+A.treeView:visited
+{
+        color: #315A8C;
+        text-decoration: none;
+}
+
+A.treeView:hover
+{
+        text-decoration: underline;
+        color: #315A8C;
+}
+/*===============================================*/
+A.treeViewSel:link
+{
+        font-weight: bold;
+        color: #315A8C;
+        text-decoration: none;
+}
+
+A.treeViewSel:visited
+{
+        font-weight: bold;
+        color: #315A8C;
+        text-decoration: none;
+}
+
+A.treeViewSel:hover
+{
+        font-weight: bold;
+        color: #315A8C;
+        text-decoration: none;
+}
+
+
+TABLE.treeView TD.txt{
+        white-space: nowrap;
+}
+td.v, td.v-first, td.v-last, td.v-none, td.c-first, td.c-last, td.c, td.c-blank {width:10px; padding: 2px 0px 3px 5px; vertical-align: middle; }
+
+/* vertical */
+td.v{ background: repeat-y 70% 0% url(../images/tree/pixel.gif); }
+td.v-first{ background: no-repeat 69% 51% url(../images/tree/pixel-down.gif); }
+td.v-last{ background: no-repeat 69% 49% url(../images/tree/pixel-up.gif); }
+td.v-h{ background: repeat-x 70% 45% url(../images/tree/pixel.gif); width:5px; }
+
+td.v div, td.c div, td.v-first div, td.c-first div, td.v-last div, td.c-last div{ font-size:1px; width: 10px; }
+td.v-h div, td.c-h div{ font-size:1px; width: 5px; }
+td.space div{ font-size:1px; width: 3px; }
+
+/* child lines */
+td.c-first{ background: repeat-y 70% 50% url(../images/tree/pixel.gif); padding-top: 4px; }
+td.c-last{ background: no-repeat 70% 48% url(../images/tree/pixel-up.gif); padding-top: 4px; }
+td.c{ background: repeat-y 70% 49% url(../images/tree/pixel.gif); padding-top: 4px; }
+td.c-h{ background: repeat-x 70% 52% url(../images/tree/pixel.gif); width: 5px; }
+td.space{ width: 3px; }
+.txt {
+line-height: 17px;
+}

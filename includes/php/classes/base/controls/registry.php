@@ -43,7 +43,7 @@ class CRegistryControl extends CTemplateControl {
             if ($parse_text) $out = CTemplate::parse_string($out, $this->html_page->template_vars);
 			
             if ($v_row->Rows[0]->Fields['key_type'] == KEY_TYPE_IMAGE) {
-				$out = $v_row->Rows[0]->Fields['id_path'] . '/' . $out;
+				$out = $v_row->Rows[0]->Fields['path_id'] . '/' . $out;
 				if ( (@file_exists(REGISTRY_FILES_STORAGE .  $out)) && (!is_dir(REGISTRY_FILES_STORAGE .  $out)) ) {
 					$img = @getimagesize(REGISTRY_FILES_STORAGE .  $out);
 					$w = intval($img[0]);

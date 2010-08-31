@@ -1,5 +1,5 @@
 <?php
-$router = &$app->get_module('Router');
+$router = $app->get_module('Router');
 $router->add_route('/', 'CIndexPage', 'CIndexPage.php', 'indexpage.tpl');
 $router->add_route('/index.html', 'CIndexPage', 'CIndexPage.php', 'indexpage.tpl');
 

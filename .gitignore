@@ -1,1 +1,4 @@
 *.tpl.php
+
+/access.log
+/error.log

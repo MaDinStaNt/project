@@ -118,5 +118,5 @@ $(document).ready(function(){
 				</tr>
 				<tr>
 					<td class="main_area" valign="top">
-					<%IT:SimpleArrayOutput block_begin="<div class=&quot;error&quot;><table cellspacing=&quot;3&quot; cellpadding=&quot;3&quot;><tr><td align=&quot;left&quot;>" block_end="</td></tr></table></div>" item_begin="" item_end="<br />" array="_errors" /%>
-					<%IT:SimpleArrayOutput block_begin="<div class=&quot;info&quot;><table cellspacing=&quot;3&quot; cellpadding=&quot;3&quot;><tr><td align=&quot;left&quot;>" block_end="</td></tr></table></div>" item_begin="" item_end="<br />" array="_info" /%>
+					<%IT:SimpleArrayOutput block_begin="<div class=&quot;error&quot;><table cellspacing=&quot;3&quot; cellpadding=&quot;3&quot;><tr><td align=&quot;left&quot;>" block_end="</td></tr></table></div>" item_begin="" item_end="<br />" return="<%=_return_errors%>" array="_errors" /%>
+					<%IT:SimpleArrayOutput block_begin="<div class=&quot;info&quot;><table cellspacing=&quot;3&quot; cellpadding=&quot;3&quot;><tr><td align=&quot;left&quot;>" block_end="</td></tr></table></div>" item_begin="" item_end="<br />" return="<%=_return_info%>" array="_info" /%>

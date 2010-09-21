@@ -54,6 +54,7 @@ class CMasterEditPage extends CAdminPage
 				if ($this->id) {
 					if ($mod->{'update_'.$this->_table}($this->id, $this->tv)) {
 						$this->tv['_info'] = $this->Localizer->get_string('object_updated');
+						$this->tv['_return_info'] =  $this->Application->Navi->getUri('parent', false);
 					}
 					else {
 						$this->tv['_errors'] = $mod->get_last_error();
@@ -62,6 +63,7 @@ class CMasterEditPage extends CAdminPage
 				else {
 					if ($this->tv['id'] = $mod->{'add_'.$this->_table}($this->tv)) {
 						$this->tv['_info'] = $this->Localizer->get_string('object_added');
+						$this->tv['_return_info'] =  $this->Application->Navi->getUri('parent', false);
 					}
 					else {
 						$this->tv['_errors'] = $mod->get_last_error();

@@ -65,6 +65,7 @@ class CUserGroupEditPage extends CMasterEditPage
 							}
 						}
 						$this->tv['_info'] = $this->Localizer->get_string('object_updated');
+						$this->tv['_return_info'] =  $this->Application->Navi->getUri('parent', false);
 					}
 					else {
 						$this->tv['_errors'] = $mod->get_last_error();
@@ -80,6 +81,7 @@ class CUserGroupEditPage extends CMasterEditPage
 							}
 						}
 						$this->tv['_info'] = $this->Localizer->get_string('object_added');
+						$this->tv['_return_info'] =  $this->Application->Navi->getUri('parent', false);
 					}
 					else {
 						$this->tv['_errors'] = $mod->get_last_error();

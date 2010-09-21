@@ -55,7 +55,11 @@ class CSimpleArrayOutput extends CTemplateControl
 			$out .= $ib . ($is_html?$v:htmlspecialchars($v)) . $ie;
 		if ( ( ($add == '') && ($out != '') ) || ($add == 'true') )
 			$out = $bb . $out . $be;
-
+			
+		if ($this->return && strlen($this->return) > 0) {
+			$out .= "<script type=\"text/javascript\" src=\"".$app->template_vars['JS']."jquery/jquery.timer.js\"></script>";
+			$out .= "<script type=\"text/javascript\" charset=\"utf-8\"> $(document).ready(function(){ $(\":body\").css('cursor', 'wait'); $.timer(2000, function (timer) { window.location.href = '".$this->return."'; timer.stop(); }); }); </script>";
+		}
 		return $out;
 	}
 
@@ -68,7 +72,8 @@ class CSimpleArrayOutput extends CTemplateControl
 		$ie = $this->get_input_var('item_end');
 		$add = $this->get_input_var('add_block');
 		$is_html = $this->get_input_var('is_html');
-
+		$this->return = $this->get_input_var('return');
+			
 		return $this->create_html($i, $bb, $be, $ib, $ie, $add, $is_html);
 	}
 }

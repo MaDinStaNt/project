@@ -52,6 +52,7 @@ class CUserEditPage extends CMasterEditPage
 							$this->Application->DataBase->delete_sql('user_value', array('user_id' => $this->id));
 						}
 						$this->tv['_info'] = $this->Localizer->get_string('object_updated');
+						$this->tv['_return_info'] =  $this->Application->Navi->getUri('parent', false);
 					}
 					else {
 						$this->tv['_errors'] = $mod->get_last_error();
@@ -60,6 +61,7 @@ class CUserEditPage extends CMasterEditPage
 				else {
 					if ($this->tv['id'] = $mod->{'add_'.$this->_table}($this->tv)) {
 						$this->tv['_info'] = $this->Localizer->get_string('object_added');
+						$this->tv['_return_info'] =  $this->Application->Navi->getUri('parent', false);
 					}
 					else {
 						$this->tv['_errors'] = $mod->get_last_error();

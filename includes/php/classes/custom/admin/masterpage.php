@@ -165,7 +165,7 @@ class CMasterPage extends CAdminPage
 
         $this->tv['clickLink'] = $this->Application->Navi->getUri('./'.$this->_table.'_edit/', true);
 
-        if ($nav->size > 1)
+        if ($nav->size > 0)
             $this->template_vars[$this->_table.'_show_remove'] = true;
         else
             $this->template_vars[$this->_table.'_show_remove'] = false;

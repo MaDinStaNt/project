@@ -22,7 +22,7 @@ class CRegistryPage extends CAdminPage
         if (!parent::parse_data()) return false;
         
         $this->tv['action_form'] = substr($_SERVER['REQUEST_URI'], 1, strlen($_SERVER['REQUEST_URI']));
-        $this->tv['registry_output'] = $this->Registry->run_admin_interface();
+        $this->tv['registry_output'] = $this->Registry->run_admin_interface('Registry', '');
         return true;
 	}
 }

@@ -26,7 +26,7 @@ class CAdminFiltersCtrl extends CTemplateControl
 				$this->Application->template_vars['filter_type_select'][] = ($filter['type'] == FILTER_SELECT);
 				$this->Application->template_vars['filter_type_date'][] = ($filter['type'] == FILTER_DATE);
 				$this->Application->template_vars['filter_title'][] = $filter['title'];
-				if (!is_null($filter['data'])) {
+				if (isset($filter['data']) && !is_null($filter['data'])) {
 					CInput::set_select_data($name, $filter['data'][0], $filter['data'][1], $filter['data'][2]);
 				}
 			}

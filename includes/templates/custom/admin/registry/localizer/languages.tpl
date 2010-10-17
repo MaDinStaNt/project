@@ -6,7 +6,7 @@
 <table cellpadding="0" cellspacing="0" class="maxw">
 <tr>
 	<td class="navi_subbgr">
-		<%it:dbnavigator.objects title="<%IT:Localizer string="languages" /%>" enumerated="no" checkable="yes" clicklink="<%=clickLink%>id=" popuped="no" /%>
+		<%it:dbnavigator.objects title="Languages" enumerated="no" checkable="yes" clicklink="<%=clickLink%>id=" popuped="no" /%>
 	</td>
 </tr>
 </table>

@@ -42,7 +42,7 @@ class CNavi extends CTemplateControl {
 
 
         function process() {
-                $template = $this->get_input_var('template', $type);
+                $template = $this->get_input_var('template');
                 $this->ctv = array();
                 $this->ctv['error'] = false;
                 $this->_prepare_gator();
@@ -61,8 +61,9 @@ class CNavi extends CTemplateControl {
                 $this->ctv['available'] = true;
                 // getting parent node for the navi-gator been created
                 $parent = $this->ss;
-
+				$level = 0;
                 $parentLevel = 0;
+                $depth = 0;
                 global $RootPath;
                 if (MOD_REWRITE) {
                         $parentUri = $RootPath;

@@ -155,7 +155,8 @@ class CTreeView extends CTemplateControl{
          * @return integer
          */
         function get_item($node){
-                static $p        =NULL;
+                static $p = null;
+                $qs = null;
                 if(! is_array($p)){
                         $qs =InGetPost('tree');
                         $qs =preg_replace('/[^\d:]+/', ',', $qs);
@@ -228,14 +229,14 @@ class CTreeView extends CTemplateControl{
          * @param string $aimage
          * @return string (src of image or NULL)
          */
-        function set_enable_image($image =NULL, $depth =NULL, $or_id =NULL, $aimage =NULL){
-            if(is_null($depth) and is_null($or_id)){
+        function set_enable_image($image =NULL, $depth =NULL, $id =NULL, $aimage =NULL){
+            if(is_null($depth) and is_null($id)){
                 return;
             }
             if(! is_null($image)){
                 if(! is_null($depth)){
                     $this->images['depth_'. ((integer)($depth))] =array($image, $aimage);
-                }else if(! is_null($or_id)){
+                }else if(! is_null($id)){
                     $this->images['id_'. ((integer)($id))] =array($image, $aimage);
                 }
             }else{
@@ -266,7 +267,7 @@ class CTreeView extends CTemplateControl{
                 $is_last = ($position ==$count);
                 $is_one = ($is_first and $is_last);
                 $is_childs = ($node->childNodes)? TRUE: FALSE;
-
+				$out = '';
                 $base = ($depth == 0)? 'v': 'c';
                 $class = ($is_last && $is_first && !$depth)? '': $base.(($is_last)? '-last': (($is_first)? '-first': ''));
 

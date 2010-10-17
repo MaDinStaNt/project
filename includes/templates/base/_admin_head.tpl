@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head>
-    <title>LLA :: Admin panel</title>
+    <title><%=site_name%> :: <%IT:Localizer string="admin_panel" /%></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
     <link rel="stylesheet" href="<%=CSS%>admin-styles.css" type="text/css" />
     <link rel="stylesheet" href="<%=CSS%>admin-navigator.css" type="text/css" />

@@ -55,6 +55,7 @@ class CApp extends CApplication
         if (!parent::on_page_init())
                 return false;
         global $DebugLevel;
+        global $SiteName;
 
 	    $client_ip = ( !empty($HTTP_SERVER_VARS['REMOTE_ADDR']) ) ? $HTTP_SERVER_VARS['REMOTE_ADDR'] : ( ( !empty($HTTP_ENV_VARS['REMOTE_ADDR']) ) ? $HTTP_ENV_VARS['REMOTE_ADDR'] : getenv('REMOTE_ADDR') );
 	    $this->Session->session_notify($client_ip);
@@ -65,16 +66,11 @@ class CApp extends CApplication
         $this->template_vars['PAGE_TITLE'] = "";
         $this->template_vars['PAGE_KEYWORDS'] = "";
 		$this->template_vars['PAGE_DESCRIPTION'] = "";
-        
 		$this->template_vars['copyright_year'] = date('Y');
-		
 		$this->template_vars['last_modified'] = gmdate('D, d M Y 00:00:00', time() - 24*60*60) . ' GMT';
-		
 		$this->template_vars['is_debug_mode'] = ($DebugLevel == 255);
-		
-		$this->template_vars['user_edit'] = $this->Navi->getUri('/users/user_edit/', true);
-		
-		$this->tv['ROOT'] = ROOT;
+		$this->template_vars['site_name'] = $SiteName;
+		$this->template_vars['ROOT'] = ROOT;
 
 		return true;
     }
@@ -90,7 +86,7 @@ class CApp extends CApplication
 function on_php_error($code, $message, $filename='', $linenumber=-1, $context=array()) {
     if (intval($code) != 2048)
     {
-        //system_die('Error '.$code.' ('.$message.') occured in '.$filename.' at '.$linenumber.'');
+        system_die('Error '.$code.' ('.$message.') occured in '.$filename.' at '.$linenumber.'');
     }
 }
 @ob_start();

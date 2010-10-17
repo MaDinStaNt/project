@@ -22,12 +22,20 @@ class CMasterPage extends CAdminPage
      * @var array
      */
     protected $_sort_column = 'title';
+    
     /**
-     * Default sort column.
+     * Default where condition.
      *
      * @var array
      */
     protected $_where = '1=1';
+    
+    /**
+     * Default filters array.
+     *
+     * @var array
+     */
+    protected $_filters = array();
 
     function CMasterPage(&$app, $template)
 	{
@@ -103,7 +111,7 @@ class CMasterPage extends CAdminPage
 						$this->_where .= " AND ".str_replace("#", ".", $name)." <= '".$date_arr[2]."-".$date_arr[1]."-".$date_arr[0]."'";
 						$this->Filtes[$this->_table][$name]['to'] = $date_arr[2]."-".$date_arr[1]."-".$date_arr[0];
 					}
-					if (strlen($this->tv[$name]) > 0) {
+					if (isset($this->tv[$name]) && strlen($this->tv[$name]) > 0) {
 						if ($filter['condition'] == CONDITION_EQUAL) {
 							$this->_where .= " AND ".str_replace("#", ".", $name)." = '".$this->tv[$name]."'";
 						}

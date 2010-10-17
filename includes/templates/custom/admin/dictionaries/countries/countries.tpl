@@ -1,7 +1,7 @@
 <%IT:form id="<%=_table%>" begin="true" method="post" action="" /%>
 <div class="buttons_top">
-	<%it:input type="button" name="delete_selected" id="delete_selected" value="<%IT:Localizer string="delete_selected" /%>" class="butt" confirm="Are you sure you want to delete selected items?" /%>
-	<%it:input type="button" name="add" id="add" value="<%IT:Localizer string="add" /%>" class="butt" /%>
+	<%it:input type="button" name="delete_selected" id="delete_selected" value="<%IT:Localizer string="btn_delete_selected" /%>" class="butt" confirm="<%IT:Localizer string="delete_confirm" /%>" /%>
+	<%it:input type="button" name="add" id="add" value="<%IT:Localizer string="btn_add" /%>" class="butt" /%>
 </div>
 <table cellpadding="0" cellspacing="0" class="maxw">
 <tr>
@@ -11,7 +11,7 @@
 </tr>
 </table>
 <div class="buttons_bottom">
-	<%it:input type="button" name="delete_selected" id="delete_selected" value="<%IT:Localizer string="delete_selected" /%>" class="butt" confirm="Are you sure you want to delete selected items?" /%>
-	<%it:input type="button" name="add" id="add" value="<%IT:Localizer string="add" /%>" class="butt" /%>
+	<%it:input type="button" name="delete_selected" id="delete_selected" value="<%IT:Localizer string="btn_delete_selected" /%>" class="butt" confirm="<%IT:Localizer string="delete_confirm" /%>" /%>
+	<%it:input type="button" name="add" id="add" value="<%IT:Localizer string="btn_add" /%>" class="butt" /%>
 </div>
 <%IT:form end="true" /%>

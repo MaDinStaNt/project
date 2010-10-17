@@ -2,7 +2,7 @@
 <%it:input type="hidden" name="id" priority="template,get,post" /%>
 <table cellpadding="0" cellspacing="0" class="maxw note">
 <tr>
-	<td><span class="note_title">Внимание!</span> Поля отмеченные <strong>болдом</strong> являются обязательными
+	<td><span class="note_title"><%it:Localizer string="warning_obligatory_fields" /%>
 	</td>
 </tr>
 </table>

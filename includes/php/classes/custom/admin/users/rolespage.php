@@ -15,7 +15,7 @@ class CRolesPage extends CMasterPage
      *
      * @var array
      */
-    protected $_columns_arr = array('title' => 'Tile', 'description' => 'Description', 'id' => 'ID');
+    protected $_columns_arr = array();
 
     function CRolesPage(&$app, $template)
 	{
@@ -26,6 +26,11 @@ class CRolesPage extends CMasterPage
 	
 	function on_page_init()
 	{
+		$this->_columns_arr = array(
+			'title' => $this->Application->Localizer->get_string('title'), 
+			'description' => $this->Application->Localizer->get_string('description'), 
+			'id' => $this->Application->Localizer->get_string('id')
+		);
 		parent::on_page_init();
 		parent::page_actions();
 		parent::page_filters();

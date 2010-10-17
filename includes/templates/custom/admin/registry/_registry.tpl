@@ -34,7 +34,7 @@
 	<%IT:SimpleArrayOutput block_begin="<div class=&quot;info&quot;><table cellspacing=&quot;3&quot; cellpadding=&quot;3&quot;><tr><td align=&quot;left&quot;>" block_end="</td></tr></table></div>" item_begin="" item_end="<br />" array="_registry_info" /%>
 	<table cellpadding="0" cellspacing="0" class="maxw note">
 	<tr>
-		<td><span class="note_title">Warning!</span> Fields marked with <strong>bold</strong> are obligatory
+		<td><span class="note_title"><%it:Localizer string="warning_obligatory_fields" /%>
 		</td>
 	</tr>
 	</table>
@@ -85,9 +85,9 @@
                     <%/if%>
                     <%if value_type_file%>
                             <%if value_value%>
-                                    <br /><a href="<%=REGISTRY_WEB%><%=current_path_path_id%>/<%=value_value%>" target="_blank">download</a>
+                                    <br /><a href="<%=REGISTRY_WEB%><%=current_path_path_id%>/<%=value_value%>" target="_blank"><%it:Localizer string="download" /%></a>
                                     <%if !value_validator_req%>
-                                            <%it:input type="checkbox" name="del_<%=value_value_id%>" id="del_<%=value_value_id%>" value="1" /%> Delete
+                                            <%it:input type="checkbox" name="del_<%=value_value_id%>" id="del_<%=value_value_id%>" value="1" /%> <%it:Localizer string="delete" /%>
                                     <%/if%>
                             <%/if%>
                     <%/if%>
@@ -95,7 +95,7 @@
                             <%if value_value%>
                             <br /><a href="<%=REGISTRY_WEB%><%=current_path_path_id%>/<%=value_value%>" target="_blank"><img src="<%=REGISTRY_WEB%><%=current_path_path_id%>/<%=value_value%>" width="60" border="0"></a>
                                     <%if !value_validator_req%>
-                                    <%it:input type="checkbox" name="del_<%=value_value_id%>" id="del_<%=value_value_id%>" value="1" /%> Delete
+                                    <%it:input type="checkbox" name="del_<%=value_value_id%>" id="del_<%=value_value_id%>" value="1" /%> <%it:Localizer string="delete" /%>
                                     <%/if%>
                             <%/if%>
                     <%/if%>
@@ -109,7 +109,7 @@
 		            <%if value_count%>
 		            <%if current_path_parent_id%>
 		                    <%if !current_path_edit_group%>
-		                            <%IT:input type="button" class="butt hand" value="Save" /%>
+		                            <%IT:input type="button" class="butt hand" value="<%it:Localizer string="btn_save" /%>" /%>
 		                    <%/if%>
 		            <%/if%>
 		            <%/if%>
@@ -117,7 +117,7 @@
 		            <%if current_path_parent_id%>
 		                    <%if current_path_edit_group%>
 		                            <%IT:input type="submit" value="Save" class="butt hand" /%>
-		                            &nbsp;<%IT:input type="button" name="delete_group" confirm="Are you sure?" value="Delete" class="butt hand" /%>
+		                            &nbsp;<%IT:input type="button" name="delete_group" confirm="<%it:Localizer string="delete_confirm" /%>" value="<%it:Localizer string="btn_delete" /%>" class="butt hand" /%>
 		                    <%/if%>
 		            <%/if%>
 		        </td>
@@ -127,7 +127,7 @@
     </tr>
     </table>
 <%else%>
-Please select an item to modify
+<%it:Localizer string="select_item_to_modify" /%>
 <%/if%>
 </td>
 </tr>

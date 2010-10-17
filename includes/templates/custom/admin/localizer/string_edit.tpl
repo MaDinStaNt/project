@@ -2,7 +2,7 @@
 <%it:input type="hidden" name="id" priority="template,get,post" /%>
 <table cellpadding="0" cellspacing="0" class="maxw note">
 <tr>
-	<td><span class="note_title">Warning!</span> Fields marked with <strong>bold</strong> are obligatory
+	<td><span class="note_title">Внимание!</span> Поля отмеченные <strong>болдом</strong> являются обязательными
 	</td>
 </tr>
 </table>
@@ -21,9 +21,9 @@
 </tr>
 <tr>
 	<td colspan="2" align="right" class="form_buttons">
-		<%it:input type="submit" name="save" id="save" value="<%IT:Localizer string="save" /%>" class="butt" /%>
-		<%it:input type="reset" name="reset" id="reset" value="<%IT:Localizer string="reset" /%>" class="butt" /%>
-		<%it:input type="button" name="close" id="close" value="<%IT:Localizer string="close" /%>" class="butt" /%>
+		<%it:input type="submit" name="save" id="save" value="<%IT:Localizer string="btn_save" /%>" class="butt" /%>
+		<%it:input type="reset" name="reset" id="reset" value="<%IT:Localizer string="btn_reset" /%>" class="butt" /%>
+		<%it:input type="button" name="close" id="close" value="<%IT:Localizer string="btn_close" /%>" class="butt" /%>
 	</td>
 </tr>
 </table>

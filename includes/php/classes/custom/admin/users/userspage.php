@@ -22,38 +22,38 @@ class CUsersPage extends CMasterPage
 		parent::CMasterPage($app, $template);
 		$this->DataBase = &$this->Application->DataBase;
 		$roles_rs = $this->User->get_user_roles();
-		$roles_rs->add_row(array('id'=>'', 'title'=>'- Any -'), INSERT_BEGIN);
+		$roles_rs->add_row(array('id' => '', 'title' => $this->Application->Localizer->get_string('any')), INSERT_BEGIN);
 	    $this->_filters = array(
 	    	'm#name' => array(
-	    		'title' => 'Name',	
+	    		'title' => $this->Application->Localizer->get_string('name'),	
 	    		'type' => FILTER_TEXT,
 	    		'data' => null,
 	    		'condition' => CONDITION_LIKE
 	    	),
 	    	'm#company' => array(
-	    		'title' => 'Company',	
+	    		'title' => $this->Application->Localizer->get_string('company'),	
 	    		'type' => FILTER_TEXT,
 	    		'data' => null,
 	    		'condition' => CONDITION_LIKE
 	    	),
 	    	'm#email' => array(
-	    		'title' => 'Email',	
+	    		'title' => $this->Application->Localizer->get_string('email'),	
 	    		'type' => FILTER_TEXT,
 	    		'data' => null,
 	    		'condition' => CONDITION_LIKE
 	    	),
 	    	'm#user_role_id' => array(
-	    		'title' => 'User role',	
+	    		'title' => $this->Application->Localizer->get_string('user_role_id'),	
 	    		'type' => FILTER_SELECT,
 	    		'data' => array($roles_rs, 'id', 'title'),
 	    		'condition' => CONDITION_EQUAL
 	    	),
 	    	'm#create_date' => array(
-	    		'title' => 'Create date from',	
+	    		'title' => $this->Application->Localizer->get_string('create_date_from'),	
 	    		'type' => FILTER_DATE,
 	    	),
 	    	'm#last_login' => array(
-	    		'title' => 'Last login from',	
+	    		'title' => $this->Application->Localizer->get_string('last_login_from'),	
 	    		'type' => FILTER_DATE,
 	    	),
 	    );
@@ -88,31 +88,31 @@ class CUsersPage extends CMasterPage
         require_once(BASE_CLASSES_PATH . 'controls/navigator.php'); // base application class
         $nav = new Navigator('users', $query, array('status' => 'status', 'name' => 'name', 'company' => 'company', 'email' =>'m.email', 'user_role' => 'user_role', 'create_date_formatted' => 'm.create_date'), 'create_date_formatted', false);
         
-        $header_num = $nav->add_header('Status', 'status');
+        $header_num = $nav->add_header($this->Application->Localizer->get_string('status'), 'status');
         $nav->headers[$header_num]->no_escape = true;
         $nav->headers[$header_num]->align = "center";
         $nav->set_width($header_num, '5%');
 
-        $header_num = $nav->add_header('Name', 'name');
+        $header_num = $nav->add_header($this->Application->Localizer->get_string('name'), 'name');
         $nav->headers[$header_num]->no_escape = false;
         $nav->headers[$header_num]->set_wrap();
         $nav->set_width($header_num, '15%');
 
-        $header_num = $nav->add_header('Company', 'company');
+        $header_num = $nav->add_header($this->Application->Localizer->get_string('company'), 'company');
         $nav->headers[$header_num]->no_escape = false;
         $nav->headers[$header_num]->set_wrap();
         $nav->set_width($header_num, '20%');
 
-        $header_num = $nav->add_header('Email', 'email');
+        $header_num = $nav->add_header($this->Application->Localizer->get_string('email'), 'email');
         $nav->headers[$header_num]->no_escape = false;
         $nav->headers[$header_num]->set_wrap();
         $nav->set_width($header_num, '20%');
 
-        $header_num = $nav->add_header('User role', 'user_role');
+        $header_num = $nav->add_header($this->Application->Localizer->get_string('user_role'), 'user_role');
         $nav->headers[$header_num]->no_escape = false;
         $nav->set_width($header_num, '20%');
 
-        $header_num = $nav->add_header('Create date', 'create_date_formatted');
+        $header_num = $nav->add_header($this->Application->Localizer->get_string('create_date'), 'create_date_formatted');
         $nav->headers[$header_num]->no_escape = false;
         $nav->set_width($header_num, '20%');
 
@@ -121,10 +121,9 @@ class CUsersPage extends CMasterPage
         $this->tv['clickLink'] = $this->Application->Navi->getUri('./user_edit/', true);
 
         if ($nav->size > 1)
-            $this->template_vars['users_show_remove'] = true;
+            $this->template_vars[$this->_table . '_show_remove'] = true;
         else
-            $this->template_vars['users_show_remove'] = false;
-
+            $this->template_vars[$this->_table . '_show_remove'] = false;
 	}
 }
 ?>

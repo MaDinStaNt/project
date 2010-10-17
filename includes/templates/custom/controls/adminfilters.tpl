@@ -3,14 +3,14 @@
 	<td class="navi_subbgr">
 		<table cellpadding="0" cellspacing="0" class="maxw">
 		<tr>
-			<td align="left"><span class="accent">Filter</span></td>
+			<td align="left"><span class="accent"><%IT:Localizer string="filter" /%></span></td>
 			<td align="right">
 				<%if is_filter_panel_show%>
-					<span id="show_filter_panel" class="hand" style="display: none; padding: 2px;"><img src="<%=IMAGES%>admin/close_tab.png" title="Hide filter" alt="Show filter" /></span>
-					<span id="hide_filter_panel" class="hand" style="display: block; padding: 2px;"><img src="<%=IMAGES%>admin/open_tab.png" title="Show filter" alt="Hide filter" /></span>
+					<span id="show_filter_panel" class="hand" style="display: none; padding: 2px;"><img src="<%=IMAGES%>admin/close_tab.png" title="<%IT:Localizer string="show_filter" /%>" alt="<%IT:Localizer string="show_filter" /%>" /></span>
+					<span id="hide_filter_panel" class="hand" style="display: block; padding: 2px;"><img src="<%=IMAGES%>admin/open_tab.png" title="<%IT:Localizer string="hide_filter" /%>" alt="<%IT:Localizer string="hide_filter" /%>" /></span>
 				<%else%>
-					<span id="show_filter_panel" class="hand" style="display: block; padding: 2px;"><img src="<%=IMAGES%>admin/close_tab.png" title="Hide filter" alt="Show filter" /></span>
-					<span id="hide_filter_panel" class="hand" style="display: none; padding: 2px;"><img src="<%=IMAGES%>admin/open_tab.png" title="Show filter" alt="Hide filter" /></span>
+					<span id="show_filter_panel" class="hand" style="display: block; padding: 2px;"><img src="<%=IMAGES%>admin/close_tab.png" title="<%IT:Localizer string="show_filter" /%>" alt="<%IT:Localizer string="show_filter" /%>" /></span>
+					<span id="hide_filter_panel" class="hand" style="display: none; padding: 2px;"><img src="<%=IMAGES%>admin/open_tab.png" title="<%IT:Localizer string="hide_filter" /%>" alt="<%IT:Localizer string="hide_filter" /%>" /></span>
 				<%/if%>
 			</td>
 		</tr>
@@ -56,7 +56,7 @@
 						<tr>
 							<td align="right" class="filter_title" width="120"><label for="<%=filter_name%>"><%=filter_title%>:</label></td>
 							<td class="field_date"><%it:input type="text" reanonly="true" name="<%=filter_name%>_from" id="daterange_from_<%$%>" class="inp" style="width: 70px;" priority="template,post,get" /%></td>
-							<td class="filter_title" align="right" width="25">to:</td>
+							<td class="filter_title" align="right" width="25"><%IT:Localizer string="to" /%>:</td>
 							<td class="field_date"><%it:input type="text" reanonly="true" name="<%=filter_name%>_to" id="daterange_to_<%$%>" class="inp" style="width: 70px;" priority="template,post,get" /%></td>
 						</tr>
 						</table>
@@ -73,8 +73,8 @@
 					<table cellpadding="1" cellspacing="0" border="0">
 					<tr>
 						<td>
-						<%it:input type="button" name="clear" id="clear" value="Clear" class="butt" /%>&nbsp;
-						<%it:input type="submit" name="filter" id="filter" value="Filter" class="butt" /%>
+						<%it:input type="button" name="clear" id="clear" value="<%IT:Localizer string="btn_clear" /%>" class="butt" /%>&nbsp;
+						<%it:input type="submit" name="filter" id="filter" value="<%IT:Localizer string="btn_filter" /%>" class="butt" /%>
 						</td>
 					</tr>
 					</table>

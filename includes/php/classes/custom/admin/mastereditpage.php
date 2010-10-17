@@ -93,12 +93,12 @@ class CMasterEditPage extends CAdminPage
 	
 	function get_status_array()
 	{
-		return array(OBJECT_ACTIVE => 'Active', OBJECT_NOT_ACTIVE => 'Inactive');
+		return array(OBJECT_ACTIVE => $this->Application->Localizer->get_string('active'), OBJECT_NOT_ACTIVE => $this->Application->Localizer->get_string('inactive'));
 	}
 	
 	function get_user_status_array()
 	{
-		return array(OBJECT_ACTIVE => 'Active', OBJECT_NOT_ACTIVE => 'Inactive', OBJECT_SUSPENDED => 'Suspended');
+		return array(OBJECT_ACTIVE => $this->Application->Localizer->get_string('active'), OBJECT_NOT_ACTIVE => $this->Application->Localizer->get_string('inactive'), OBJECT_SUSPENDED => $this->Application->Localizer->get_string('suspended'));
 	}
 }
 

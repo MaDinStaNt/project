@@ -51,7 +51,7 @@
 			$this->tv['right_button_text'] = $this->right_button_text;
 			$this->tv['left_button_text'] = $this->left_button_text;
 //indexes
-			if ((strlen($this->tv[$this->tv['left_list_id'] . '_idx']) > 0)||(strlen($this->tv[$this->tv['right_list_id'] . '_idx']) > 0))
+			if ((isset($this->tv[$this->tv['left_list_id'] . '_idx']) && strlen($this->tv[$this->tv['left_list_id'] . '_idx']) > 0)||(isset($this->tv[$this->tv['left_list_id'] . '_idx']) && strlen($this->tv[$this->tv['right_list_id'] . '_idx']) > 0))
 			{
 				$this->left_items = array();
 				if (strlen($this->tv[$this->tv['left_list_id'] . '_idx']) > 0)

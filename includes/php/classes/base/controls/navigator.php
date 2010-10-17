@@ -1,7 +1,6 @@
 <?
 if (!defined('NAV_PAGE_SIZE')) define('NAV_PAGE_SIZE', 10); // Default size (in rows)
 if (!defined('NAV_TEMPLATE_FILE')) define('NAV_TEMPLATE_FILE', 'navigator.tpl'); // Template file
-if (!defined('NAV_DEFAULT_EMPTY_MESSAGE')) define('NAV_DEFAULT_EMPTY_MESSAGE', 'There are currently no records to be shown');
 
 /**
  * @package LLA.Base
@@ -385,12 +384,7 @@ array sort_vars - array of sorting values (name_in_get => value_for_inserting_in
                         $this->template->set_var('object_id', $this->object_id);
 
                         $this->template->set_var('is_empty', false);
-                        if ($is_second_db) {
-	                        $fields_num = $this->Application->DataBase2->internalNumFields($this->select_result);
-                        }
-                        else {
-                        	$fields_num = $this->Application->DataBase->internalNumFields($this->select_result);
-                        }
+                    	$fields_num = $this->Application->DataBase->internalNumFields($this->select_result);
 
                         $real_field_num = $fields_num;
                         if ($this->enumerated) $real_field_num++;
@@ -534,12 +528,7 @@ array sort_vars - array of sorting values (name_in_get => value_for_inserting_in
                 }
                 if (!is_null($this->click_link) || !is_null($this->check_name)) $count++;
 				
-                if ($is_second_db) {
-	                $field_obj = $this->Application->DataBase2->internalFetchField($this->select_result, 0);
-                }
-                else {
-                	$field_obj = $this->Application->DataBase->internalFetchField($this->select_result, 0);
-                }
+            	$field_obj = $this->Application->DataBase->internalFetchField($this->select_result, 0);
 
                 if (is_null($this->click_link) && is_null($this->check_name) && ($field_obj->name == $this->id_name) ) $count++;
 
@@ -562,12 +551,8 @@ array sort_vars - array of sorting values (name_in_get => value_for_inserting_in
                         $this->template->set_var('checkable', true);
                 } else $this->template->set_var('checkable', false);
 
-                if ($is_second_db) {
-	                $field_obj = $this->Application->DataBase2->internalFetchField($this->select_result, 0);
-                }
-                else {
-	                $field_obj = $this->Application->DataBase->internalFetchField($this->select_result, 0);
-                }
+                $field_obj = $this->Application->DataBase->internalFetchField($this->select_result, 0);
+
                 if ($field_obj->name == $this->id_name)
                         $start_field = 1;
                 else
@@ -592,14 +577,9 @@ array sort_vars - array of sorting values (name_in_get => value_for_inserting_in
 
                 //mysql_data_seek($this->select_result, 0);
                 $cnt = 0;
-                if ($is_second_db) {
-	                while ($cnt++ < $this->Application->DataBase2->_int_data_seek) $this->Application->DataBase2->internalFetchAssoc($this->select_result);
-                }
-                else {
-	                while ($cnt++ < $this->Application->DataBase->_int_data_seek) $this->Application->DataBase->internalFetchAssoc($this->select_result);
-                }
+                while ($cnt++ < $this->Application->DataBase->_int_data_seek) $this->Application->DataBase->internalFetchAssoc($this->select_result);
 
-                while ($row = (($is_second_db) ? ($this->Application->DataBase2->internalFetchArray($this->select_result)) : ($this->Application->DataBase->internalFetchArray($this->select_result)))) {
+                while ($row = ($this->Application->DataBase->internalFetchArray($this->select_result))) {
                         $field_count = 0;
                         $hl_flag = false;
                         unset($hl_color);
@@ -742,7 +722,7 @@ array sort_vars - array of sorting values (name_in_get => value_for_inserting_in
                 } else {
                         $this->template->set_var('is_empty', true);
                         if (!is_null($this->empty_message)) $this->template->set_var('empty_message', $this->empty_message);
-                        else $this->template->set_var('empty_message', NAV_DEFAULT_EMPTY_MESSAGE);
+                        else $this->template->set_var('empty_message', $this->Application->Localizer->get_string('nav_default_empty_message'));
                 }
         }
 

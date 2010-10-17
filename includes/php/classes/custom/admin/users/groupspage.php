@@ -15,7 +15,7 @@ class CGroupsPage extends CMasterPage
      *
      * @var array
      */
-    protected $_columns_arr = array('title' => 'Tile', 'description' => 'Description');
+    protected $_columns_arr = array();
 
     function CGroupsPage(&$app, $template)
 	{
@@ -49,12 +49,12 @@ class CGroupsPage extends CMasterPage
         require_once(BASE_CLASSES_PATH . 'controls/navigator.php'); // base application class
         $nav = new Navigator('objects', $query, array('title' => 'title', 'description' => 'description'), 'title', $this->Application);
         
-        $header_num = $nav->add_header('Title', 'title');
+        $header_num = $nav->add_header($this->Application->Localizer->get_string('title'), 'title');
         $nav->headers[$header_num]->no_escape = false;
         $nav->headers[$header_num]->set_wrap();
         $nav->set_width($header_num, '50%');
 
-        $header_num = $nav->add_header('Description', 'description');
+        $header_num = $nav->add_header($this->Application->Localizer->get_string('description'), 'description');
         $nav->headers[$header_num]->no_escape = false;
         $nav->headers[$header_num]->set_wrap();
         $nav->set_width($header_num, '50%');

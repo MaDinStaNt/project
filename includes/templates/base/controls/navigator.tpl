@@ -3,14 +3,14 @@
 <%ELSE%>
     <table class="maxw" border="0" cellpadding="0" cellspacing="0">
     <tr>
-    <td class="maxw navi_title" nowrap="nowrap"><span class="accent"><%#title%> (<%#max_size%> total)</span></td>
+    <td class="maxw navi_title" nowrap="nowrap"><span class="accent"><%#title%> (<%#max_size%> <%IT:Localizer string="total" /%>)</span></td>
     <%IF have_pages%>
     <%IF prev_pages%>
-    <td valign="middle" class="nav-butt-img"><a href="<%#first_link%>"><img alt="" title="First page" src="<%=IMAGES%>admin/first.gif" border="0"<%=SINGLE_TAG_END%>></a></td>
-    <td valign="middle" class="nav-butt-img"><a href="<%#prev_link%>"><img alt="" title="Previous page" src="<%=IMAGES%>admin/prev.gif" border="0"<%=SINGLE_TAG_END%>></a></td>
+    <td valign="middle" class="nav-butt-img"><a href="<%#first_link%>"><img alt="<%IT:Localizer string="first_page" /%>" title="<%IT:Localizer string="first_page" /%>" src="<%=IMAGES%>admin/first.gif" border="0"<%=SINGLE_TAG_END%>></a></td>
+    <td valign="middle" class="nav-butt-img"><a href="<%#prev_link%>"><img alt="<%IT:Localizer string="previous_page" /%>" title="<%IT:Localizer string="previous_page" /%>" src="<%=IMAGES%>admin/prev.gif" border="0"<%=SINGLE_TAG_END%>></a></td>
     <%/IF%>
     <%if page_count%>
-    <td valign="middle" class="nav-butt accent" nowrap="nowrap">&nbsp;Page&nbsp;</td>
+    <td valign="middle" class="nav-butt accent" nowrap="nowrap">&nbsp;<%IT:Localizer string="page" /%>&nbsp;</td>
     <%FOR page_count%>
     <td valign="middle" class="nav-butt" nowrap="nowrap">
     <%IF page_is_current%>
@@ -21,8 +21,8 @@
     <%/FOR%>
     <%/if%>
     <%IF next_pages%>
-    <td valign="middle" class="nav-butt-img"><a href="<%#next_link%>"><img alt="" title="Next page" src="<%=IMAGES%>admin/next.gif" border="0"<%=SINGLE_TAG_END%>></a></td>
-    <td valign="middle" class="nav-butt-img"><a href="<%#last_link%>"><img alt="" title="Last page" src="<%=IMAGES%>admin/last.gif" border="0"<%=SINGLE_TAG_END%>></a></td>
+    <td valign="middle" class="nav-butt-img"><a href="<%#next_link%>"><img alt="<%IT:Localizer string="next_page" /%>" title="<%IT:Localizer string="next_page" /%>" src="<%=IMAGES%>admin/next.gif" border="0"<%=SINGLE_TAG_END%>></a></td>
+    <td valign="middle" class="nav-butt-img"><a href="<%#last_link%>"><img alt="<%IT:Localizer string="last_page" /%>" title="<%IT:Localizer string="last_page" /%>" src="<%=IMAGES%>admin/last.gif" border="0"<%=SINGLE_TAG_END%>></a></td>
     <%/IF%>
     <%/IF%>
     </tr>
@@ -91,11 +91,11 @@
 <table align="right" border="0" cellpadding="0" cellspacing="0">
 <tr>
 <%IF prev_pages%>
-<td valign="middle" class="nav-butt-img"><a href="<%#first_link%>"><img alt="" title="First page" src="<%=IMAGES%>admin/first.gif" border="0"<%=SINGLE_TAG_END%>></a></td>
-<td valign="middle" class="nav-butt-img"><a href="<%#prev_link%>"><img alt="" title="Previous page" src="<%=IMAGES%>admin/prev.gif" border="0"<%=SINGLE_TAG_END%>></a></td>
+<td valign="middle" class="nav-butt-img"><a href="<%#first_link%>"><img alt="<%IT:Localizer string="first_page" /%>" title="<%IT:Localizer string="first_page" /%>" src="<%=IMAGES%>admin/first.gif" border="0"<%=SINGLE_TAG_END%>></a></td>
+<td valign="middle" class="nav-butt-img"><a href="<%#prev_link%>"><img alt="<%IT:Localizer string="previous_page" /%>" title="<%IT:Localizer string="previous_page" /%>" src="<%=IMAGES%>admin/prev.gif" border="0"<%=SINGLE_TAG_END%>></a></td>
 <%/IF%>
 <%if page_count%>
-<td valign="middle" class="accent" nowrap="nowrap">&nbsp;Page&nbsp;</td>
+<td valign="middle" class="accent" nowrap="nowrap">&nbsp;<%IT:Localizer string="page" /%>&nbsp;</td>
 <%FOR page_count%>
 <td valign="middle" class="nav-butt" nowrap="nowrap">
 <%IF page_is_current%>
@@ -106,8 +106,8 @@
 <%/FOR%>
 <%/if%>
 <%IF next_pages%>
-<td valign="middle" class="nav-butt-img"><a href="<%#next_link%>"><img alt="" title="Next page" src="<%=IMAGES%>admin/next.gif" border="0"<%=SINGLE_TAG_END%>></a></td>
-<td valign="middle" class="nav-butt-img"><a href="<%#last_link%>"><img alt="" title="Last page" src="<%=IMAGES%>admin/last.gif" border="0"<%=SINGLE_TAG_END%>></a></td>
+<td valign="middle" class="nav-butt-img"><a href="<%#next_link%>"><img alt="<%IT:Localizer string="next_page" /%>" title="<%IT:Localizer string="next_page" /%>" src="<%=IMAGES%>admin/next.gif" border="0"<%=SINGLE_TAG_END%>></a></td>
+<td valign="middle" class="nav-butt-img"><a href="<%#last_link%>"><img alt="<%IT:Localizer string="last_page" /%>" title="<%IT:Localizer string="last_page" /%>" src="<%=IMAGES%>admin/last.gif" border="0"<%=SINGLE_TAG_END%>></a></td>
 <%/IF%>
 </tr>
 </table>

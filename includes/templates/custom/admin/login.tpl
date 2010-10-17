@@ -3,7 +3,7 @@
 <tr>
 	<td align="center" colspan="2">
 		<div>
-		<strong>Administration Panel</strong>
+		<strong><%it:Localizer string="admin_panel" /%></strong>
 		</div>
 	</td>
 </tr>
@@ -20,16 +20,16 @@
 	<td>
 		<table cellpadding="0" cellspacing="0">
 		<tr>
-			<td><%it:input type="checkbox" id="form_store" name="form_store" value="1" /%></td>
-			<td><label for="form_store"> - <%it:Localizer string="remember_me" /%></label></td>
+			<td><%it:input type="checkbox" id="remember_me" name="remember_me" value="1" /%></td>
+			<td><label for="remember_me"> - <%it:Localizer string="remember_me" /%></label></td>
 		</tr>
 		</table>
 	</td>
 </tr>
 <tr>
 	<td align="right" colspan="2">
-		<%it:input class="butt" type="reset" value="Reset" /%>
-		<%it:input class="butt" type="submit" value="Log In" /%>
+		<%it:input class="butt" type="reset" value="<%it:Localizer string="btn_reset" /%>" /%>
+		<%it:input class="butt" type="submit" value="<%it:Localizer string="btn_log_in" /%>" /%>
 	</td>
 </tr>
 </table>

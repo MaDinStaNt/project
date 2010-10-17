@@ -63,7 +63,7 @@ $(document).ready(function(){
 		>
 		<table cellpadding="0" cellspacing="0" class="maxw">
 		<tr>
-			<td class="navigation_title" nowrap="true"><a href="<%=HTTP%>">LLA</a> - <a href="<%=HTTP%>admin/">Admin Panel</a></td>
+			<td class="navigation_title" nowrap="true"><a href="<%=HTTP%>"><%=site_name%></a> - <a href="<%=HTTP%>admin/"><%IT:Localizer string="admin_panel" /%></a></td>
 		</tr>
 		</table>
 		<%it:navi /%>
@@ -71,11 +71,11 @@ $(document).ready(function(){
 	</td>
 	<td width="5" valign="middle" class="vert_line">
 		<%if is_panel_show%>
-			<div id="hide_panel" class="hand" style="display: block;"><img src="<%=IMAGES%>admin/slider_left.png" title="Hide panel" alt="Hide panel" /></div>
-			<div id="show_panel" class="hand" style="display: none;"><img src="<%=IMAGES%>admin/slider_right.png" title="Show panel" alt="Show panel" /></div>
+			<div id="hide_panel" class="hand" style="display: block;"><img src="<%=IMAGES%>admin/slider_left.png" title="<%IT:Localizer string="hide_panel" /%>" alt="<%IT:Localizer string="hide_panel" /%>" /></div>
+			<div id="show_panel" class="hand" style="display: none;"><img src="<%=IMAGES%>admin/slider_right.png" title="<%IT:Localizer string="show_panel" /%>" alt="<%IT:Localizer string="show_panel" /%>" /></div>
 		<%else%>
-			<div id="hide_panel" class="hand" style="display: none;"><img src="<%=IMAGES%>admin/slider_left.png" title="Hide panel" alt="Hide panel" /></div>
-			<div id="show_panel" class="hand" style="display: block;"><img src="<%=IMAGES%>admin/slider_right.png" title="Show panel" alt="Show panel" /></div>
+			<div id="hide_panel" class="hand" style="display: none;"><img src="<%=IMAGES%>admin/slider_left.png" title="<%IT:Localizer string="hide_panel" /%>" alt="<%IT:Localizer string="hide_panel" /%>" /></div>
+			<div id="show_panel" class="hand" style="display: block;"><img src="<%=IMAGES%>admin/slider_right.png" title="<%IT:Localizer string="show_panel" /%>" alt="<%IT:Localizer string="show_panel" /%>" /></div>
 		<%/if%>
 	</td>
 	<%/if%>
@@ -98,13 +98,13 @@ $(document).ready(function(){
 										<%IT:form end="true" /%>
 										<table cellpadding="0" cellspacing="0" class="login_area_panel">
 										<tr>
-											<td valign="middle">You logged as:</td>
+											<td valign="middle"><%IT:Localizer string="you_logged_in_as" /%>:</td>
 											<td><img src="<%=IMAGES%>admin/login_area_user.png"></td>
 											<td class="login_panel_title"><a href="<%=user_edit%>id=<%=logged_user_id%>"><%=logged_user_name%> (<%=logged_user_email%>)</a></td>
 											<td><img src="<%=IMAGES%>admin/login_area_settings.png"></td>
-											<td class="login_panel_title"><a href="#">Settings</a></td>
+											<td class="login_panel_title"><a href="#"><%IT:Localizer string="settings" /%></a></td>
 											<td><img src="<%=IMAGES%>admin/login_area_logout.png"></td>
-											<td class="login_panel_title logout"><a href="JavaScript: if (confirm('<%IT:Localizer string="logout_question" /%>')) document.forms.logout_form.submit();">Logout</a></td>
+											<td class="login_panel_title logout"><a href="JavaScript: if (confirm('<%IT:Localizer string="logout_question" /%>')) document.forms.logout_form.submit();"><%IT:Localizer string="logout" /%></a></td>
 										</tr>
 										</table>
 									</td>

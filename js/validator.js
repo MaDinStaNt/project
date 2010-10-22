@@ -1,8 +1,2 @@
-// validator.js
-// history:
-//	v 1.0 created (VK)
-
-function _validate(form)
-{
-
-}
+$(function(){$("input").change(function() {$("#"+$(this).attr('name')+"_validator_message").html('<div id="loader"><img src="/images/ajax-loader_sm.gif" /></div>'); call('AjaxValidator', 'validate', [ $("#pageclass").val(), $(this).parents('form').attr('name'), $(this).attr('name'), $(this).val()]).listen(validate); }) })
+function validate(data) {if (data) {if (data.message.length > 0) {$("#"+data.field+"_validator_message").html('<div class="haserror">'+data.message+'</div>'); } else { $("#"+data.field+"_validator_message").html('<div class="good">&nbsp;</div>'); } } else { alert('Validators not described!'); } }

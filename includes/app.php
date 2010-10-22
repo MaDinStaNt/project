@@ -31,6 +31,12 @@ class CApp extends CApplication
                 'Visual'=>'0',
                 'Title' => 'Interface'
         );
+		$this->Modules['AjaxValidator'] = array(
+				'ClassName' => 'CAjaxValidator',
+				'ClassPath' => CUSTOM_CLASSES_PATH . 'components/ajaxvalidator.php',
+				'Visual'=>'0',
+				'Title' => 'AjaxValidator'
+		);
         $this->Modules['Dictionaries'] = array(
                 'ClassName' => 'CDictionaries',
                 'ClassPath' => CUSTOM_CLASSES_PATH . 'components/dictionaries.php',

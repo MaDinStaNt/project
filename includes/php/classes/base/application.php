@@ -40,7 +40,6 @@ class CApplication {
          * @var CDataBase
          */
         var $DataBase;
-        var $DataBase2;
         var $User;
         var $Router;
         var $Session;
@@ -49,6 +48,8 @@ class CApplication {
         var $template_vars;
         var $tv;
         var $events;
+        var $locale;
+        var $codepage;
         function CApplication() {
                 $this->Modules = array();
                 $this->template_vars = array();
@@ -58,7 +59,7 @@ class CApplication {
                 $this->Modules['BF'] = array('ClassName' => 'CBlowFish', 'ClassPath' => BASE_CLASSES_PATH . 'components/blowfish.php', 'Title'=>'');
                 $this->Modules['Thumbnail'] = array('ClassName' => 'CThumbnail', 'ClassPath' => BASE_CLASSES_PATH . 'components/thumbnail.php', 'Title'=>'');
 
-                $this->DataBase = new CDataBase($this);
+                $this->DataBase = new CDataBase($this, $this->locale);
                 $this->User = new CUser($this);
                 $this->Localizer = new CLocalizer($this);
                 $this->Router = new CRouter($this);

@@ -159,7 +159,7 @@ class CMasterPage extends CAdminPage
         	$query .= $column . ", ";
         }
         $query = substr($query, 0, strlen($query) - 2);
-        $query .= " FROM %prefix%".$this->_table." WHERE 1 = 1";
+        $query .= " FROM %prefix%".$this->_table." WHERE " . $this->_where;
         
         require_once(BASE_CLASSES_PATH . 'controls/navigator.php'); // base application class
         $nav = new Navigator('objects', $query, $sort_arr, $this->_sort_column, $this->Application);

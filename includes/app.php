@@ -24,7 +24,14 @@ class CApp extends CApplication
 {
     function CApp()
     {
+    	//$this->locale = 'ru_RU';
+    	//$this->codepage = 'CP1251';
+        //setlocale(LC_ALL, ((!isset($_SERVER['WINDIR'])) ? sprintf('%1$s.%2$s', $this->locale, $this->codepage) : ''));
+
         parent::CApplication();
+
+        //$this->Localizer->set_language(2);
+        
         $this->Modules['Interface'] = array(
                 'ClassName' => 'CInterface',
                 'ClassPath' => CUSTOM_CLASSES_PATH . 'components/interface.php',

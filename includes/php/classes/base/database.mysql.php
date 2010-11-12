@@ -61,7 +61,7 @@ history:
  */
 class CDataBase extends CBaseDB
 {
-        function CDataBase(&$app)
+        function CDataBase(&$app, $locale = 'en_US')
         {
                 parent::CBaseDB($app);
                 $this->now_stmt = 'now()';
@@ -70,6 +70,7 @@ class CDataBase extends CBaseDB
                 $this->auto_inc_stmt = 'auto_increment';
                 $this->concat_func_stmt = 'concat';
                 $this->concat_char = ',';
+                $this->locale = $locale;
 
                 if (!function_exists('mysql_connect'))
                         system_die('MySQL module is not installed');
@@ -110,6 +111,8 @@ class CDataBase extends CBaseDB
                                 @mysql_query("set character_set_connection='utf8_general_ci'", $this->LinkID);
                                 @mysql_query("set character_set_results='utf8_general_ci'", $this->LinkID);
                                 @mysql_query("set character_set_server='utf8_general_ci'", $this->LinkID);
+								@mysql_query("SET lc_time_names = '".$this->locale."'", $this->LinkID);
+
                                 if (@mysql_select_db(((isset($this->DB_DATABASE))?($this->DB_DATABASE):(DB_DATABASE)), $this->LinkID))
                                         return $this->LinkID;
                                 else

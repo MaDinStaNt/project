@@ -133,6 +133,7 @@ class CinternalHTMLInput extends CTemplateControl
                 $type = strtolower($this->get_input_var('type'));
                 $priority = explode(',', $this->get_input_var('priority', 'post,get,template'));
                 $value = null;
+                static $is_wysiwyg_included = false;
                 foreach ($priority as $v) {
                         $v = trim($v);
                         if (strcasecmp($v, 'post')==0)
@@ -183,28 +184,31 @@ class CinternalHTMLInput extends CTemplateControl
                         }
                         case 'htmlarea':
                         {
-                $out .= '
-                            <!-- tinyMCE -->
-                            <script language="javascript" type="text/javascript" src="'.$app->template_vars['JS'].'tiny_mce/tiny_mce.js"></script>
-                            <script language="javascript" type="text/javascript">
-                                tinyMCE.init({
-                                    mode : "specific_textareas",
-                                    editor_selector : "mceEditor",
-                                    theme : "'.((strlen($this->input_vars['theme']) > 0) ? $this->input_vars['theme'] : "advanced").'",
-                                    plugins : "advlink,searchreplace,contextmenu,paste,insertdatetime,preview,print,fullscreen",
-                                    theme_advanced_buttons1 : "bold,italic,underline,strikethrough,separator,sub,sup,separator,justifyleft,justifycenter,justifyright,justifyfull,separator,formatselect,fontselect,fontsizeselect,forecolor,backcolor,|,insertdate,inserttime",
-                                    theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,separator,undo,redo,separator,search,replace,separator,bullist,numlist,separator,outdent,indent,blockquote,separator,link,unlink,anchor,charmap,hr,removeformat,cleanup,|,preview,print,fullscreen,|,code",
-                                    theme_advanced_buttons3 : "",
-                                    theme_advanced_toolbar_location : "top",
-                                    theme_advanced_toolbar_align : "left",
-                                    theme_advanced_path_location : "bottom",
-                                    content_css : "'.$app->template_vars['CSS'].'weditor.css",
-                                    extended_valid_elements : "a[name|href|target|title|onclick],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]",
-                                    external_image_list_url : "'.$app->template_vars['JS'].'tiny_mce/documents-wysiwyg-imagelist.js.php"
-                                });
-                            </script>
-                            <!-- /tinyMCE -->
-                ';
+                        		if (!$is_wysiwyg_included) {
+					                $out .= '
+		                            <!-- tinyMCE -->
+		                            <script language="javascript" type="text/javascript" src="'.$app->template_vars['JS'].'tiny_mce/tiny_mce.js"></script>
+		                            <script language="javascript" type="text/javascript">
+		                                tinyMCE.init({
+		                                    mode : "specific_textareas",
+		                                    editor_selector : "mceEditor",
+		                                    theme : "'.((strlen($this->input_vars['theme']) > 0) ? $this->input_vars['theme'] : "advanced").'",
+		                                    plugins : "advlink,searchreplace,contextmenu,paste,insertdatetime,preview,print,fullscreen",
+		                                    theme_advanced_buttons1 : "bold,italic,underline,strikethrough,separator,sub,sup,separator,justifyleft,justifycenter,justifyright,justifyfull,separator,formatselect,fontselect,fontsizeselect,forecolor,backcolor,|,insertdate,inserttime",
+		                                    theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,separator,undo,redo,separator,search,replace,separator,bullist,numlist,separator,outdent,indent,blockquote,separator,link,unlink,anchor,charmap,hr,removeformat,cleanup,|,preview,print,fullscreen,|,code",
+		                                    theme_advanced_buttons3 : "",
+		                                    theme_advanced_toolbar_location : "top",
+		                                    theme_advanced_toolbar_align : "left",
+		                                    theme_advanced_path_location : "bottom",
+		                                    content_css : "'.$app->template_vars['CSS'].'weditor.css",
+		                                    extended_valid_elements : "a[name|href|target|title|onclick],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]",
+		                                    external_image_list_url : "'.$app->template_vars['JS'].'tiny_mce/documents-wysiwyg-imagelist.js.php"
+		                                });
+		                            </script>
+		                            <!-- /tinyMCE -->
+					                ';
+					                $is_wysiwyg_included = true;
+                        		}
                                 $out .= '<textarea mce_editable="true" class="mceEditor"';
                                 $out .= ( (isset($this->input_vars['class']))?(''):(' class="input"') );
                                 foreach ($this->input_vars as $k => $v)
@@ -213,7 +217,7 @@ class CinternalHTMLInput extends CTemplateControl
                                                 (strcasecmp($k, 'type') != 0)
                                                 )
                                                 $out .= ' ' . $k . '="' . htmlspecialchars($v) . '"';
-                                $out .= CValidator::get_html($name, $type);
+                                //$out .= CValidator::get_html($name, $type);
                                 $out .= '>' . htmlspecialchars(strval($value)) . '</textarea>';
                                 break;
                         } // end of 'textarea'

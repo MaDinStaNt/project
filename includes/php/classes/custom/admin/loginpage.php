@@ -32,7 +32,7 @@ class CLoginPage extends CAdminPage
         new CSimpleArrayOutput();
         if (CValidator::validate_input())
 		{
-			if (!$this->Application->User->login($this->tv['email'], $this->tv['password'], (($this->tv['form_store'] == 1)?true:false)))
+			if (!$this->Application->User->login($this->tv['email'], $this->tv['password'], (($this->tv['remember_me'] == 1)?true:false)))
 				$this->tv['_errors'] = $this->Application->User->get_last_error();
 			else
 			{

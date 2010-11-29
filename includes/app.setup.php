@@ -1,7 +1,6 @@
 <?
-if ($module_name == 'Registry')
-{
-    $reg = &$this->get_module('Registry');
+if ($module_name == 'Registry') {
+    $reg = $this->get_module('Registry');
  
 	$id_path_site_settings = $reg->add_path(null, '_site_settings', 'Site settings');
 
@@ -10,13 +9,8 @@ if ($module_name == 'Registry')
 
 }
 
-if ($module_name == 'User')
-{
-}
-
-if ($module_name == 'Localizer')
-{
-    $loc = &$this->get_module('Localizer');
+if ($module_name == 'Localizer') {
+    $loc = $this->get_module('Localizer');
 }
 
 return true;

@@ -76,6 +76,7 @@ class CApp extends CApplication
         require_once(CUSTOM_CONTROLS_PATH.'navi.php');
         new CNavi($this);
         
+
         $this->template_vars['PAGE_TITLE'] = "";
         $this->template_vars['PAGE_KEYWORDS'] = "";
 		$this->template_vars['PAGE_DESCRIPTION'] = "";

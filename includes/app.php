@@ -62,6 +62,12 @@ class CApp extends CApplication
                 'Visual'=>'0',
                 'Title' => 'States'
         );
+        $this->Modules['Images'] = array(
+                'ClassName' => 'CImages',
+                'ClassPath' => CUSTOM_CLASSES_PATH . 'components/images.php',
+                'Visual'=>'0',
+                'Title' => 'Images'
+        );
    	}
     
     function on_page_init() {

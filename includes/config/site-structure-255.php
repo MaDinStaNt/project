@@ -44,6 +44,17 @@ array(
 		),
 		3 => array(
 			'title' => 'Settings', 'tag' => 'registry', 'class' => 'admin/registry/RegistryPage.php', 'template' => 'admin/registry/_registry_out.tpl', 'children' => array(
+				0 => array(
+					'title' => 'Images', 'tag' => 'image', 'class' => 'admin/registry/ImagePage.php', 'template' => 'admin/registry/image.tpl', 'children' => array(
+						0 => array(
+								'title' => 'Image view', 'tag' => 'image_edit', 'mode' => 'hidden', 'class' => 'admin/registry/ImageEditPage.php', 'template' => 'admin/registry/image_edit.tpl', 'children' => array(
+								0 => array(
+										'title' => 'Image size view', 'tag' => 'image_size_edit', 'mode' => 'hidden', 'class' => 'admin/registry/ImageSizeEditPage.php', 'template' => 'admin/registry/image_size_edit.tpl'
+								),
+							),
+						),
+					),
+				),
 			),
 		),
 	),

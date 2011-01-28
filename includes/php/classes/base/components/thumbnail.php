@@ -19,6 +19,7 @@ define('THUMBNAIL_METHOD_SCALE_MIN', 1);
 */
 define('THUMBNAIL_METHOD_CROP',      2);
 
+define('THUMBNAIL_METHOD_FIT',      3);
 /**
 * Align constants
 */
@@ -275,12 +276,19 @@ class CThumbnail
                         $H = floor($height * $Ww);
                         $Y = $this->_coord($options['valign'], $sourceHeight, $H);
                     }
-                } else {
+                } elseif ( $options['method'] == THUMBNAIL_METHOD_SCALE_MAX ) {
                     if ( $H > $W ) {
                         $width  = floor($height / $H * $W);
                     } else {
                         $height = floor($width / $W * $H);
                     }
+                } else {
+					if ($height < $width) {
+						$width = $W * $height / $H;
+					}
+					else {
+						$height = $H * $width / $W;
+					}
                 }
             }
         }

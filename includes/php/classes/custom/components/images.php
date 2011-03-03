@@ -182,6 +182,17 @@ class CImages
         $this->DataBase->delete_sql('image_size', array('id' => $id));
         return true;
     }
+    
+    private function init_directories() {
+    	global $FilePath;
+		$image_sizes_rs = $this->DataBase->select_sql('image_size', array('image_id' => $image_rs->get_field('id')));
+		if ($image_sizes_rs !== false) {
+			while (!$image_sizes_rs->eof()) {
+				
+				$image_sizes_rs->next();
+			}
+		}
+    }
 
     function check_install() {
     	  return ( ($this->DataBase->is_table('image')) && ($this->DataBase->is_table('image_size')) );

@@ -192,7 +192,7 @@ class CinternalHTMLInput extends CTemplateControl
 		                                tinyMCE.init({
 		                                    mode : "specific_textareas",
 		                                    editor_selector : "mceEditor",
-		                                    theme : "'.((strlen($this->input_vars['theme']) > 0) ? $this->input_vars['theme'] : "advanced").'",
+		                                    theme : "'.(((isset($this->input_vars['theme']))&&(strlen($this->input_vars['theme']) > 0)) ? $this->input_vars['theme'] : "advanced").'",
 		                                    plugins : "advlink,searchreplace,contextmenu,paste,insertdatetime,preview,print,fullscreen",
 		                                    theme_advanced_buttons1 : "bold,italic,underline,strikethrough,separator,sub,sup,separator,justifyleft,justifycenter,justifyright,justifyfull,separator,formatselect,fontselect,fontsizeselect,forecolor,backcolor,|,insertdate,inserttime",
 		                                    theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,separator,undo,redo,separator,search,replace,separator,bullist,numlist,separator,outdent,indent,blockquote,separator,link,unlink,anchor,charmap,hr,removeformat,cleanup,|,preview,print,fullscreen,|,code",

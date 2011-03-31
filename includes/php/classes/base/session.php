@@ -46,7 +46,7 @@ class  CSession  {
 		
 		$session_id = session_id();
 		
-		if ( !empty($session_id) && (sizeof($sessiondata) > 0) )
+		if ( !empty($session_id) )
 		{
 			if ($current_time - $sessiondata['last_update_time'] > 60) {
 				$sessiondata['last_update_time'] = $current_time;

@@ -32,7 +32,7 @@ define('DB_SERVER', 'localhost'); // db server
 define('DB_PORT', '3306'); // db port: 3306 - mysql, 5432 - pgsql, 1433 - mssql
 define('DB_USER', 'root'); // db user name
 define('DB_PASSWORD', 'root'); // db password
-define('DB_DATABASE', 'lla'); // database name, will be created automatically
+define('DB_DATABASE', 'laserline'); // database name, will be created automatically
 define('DB_PREFIX', ''); // prexif for name of the tables in db
 
 define('XHTML', '1');

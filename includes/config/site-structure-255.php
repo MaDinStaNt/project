@@ -57,6 +57,45 @@ array(
 				),
 			),
 		),
+		4 => array(
+			'title' => 'Продукция', 'tag' => 'production', 'class' => 'admin/product/productionpage.php', 'template' => 'admin/product/production.tpl', 'children' => array(
+				0 => array(
+					'title' => 'Категории продуктов', 'tag' => 'product_category', 'class' => 'admin/product/categorypage.php', 'template' => 'admin/product/category.tpl', 'children' => array(
+						0 => array(
+							'title' => 'Редактирование категории', 'tag' => 'product_category_edit', 'class' => 'admin/product/categoryeditpage.php', 'template' => 'admin/product/category_edit.tpl', 'mode' => 'hidden'
+						),
+					),
+				), 
+				1 => array(
+					'title' => 'Продукты', 'tag' => 'product', 'class' => 'admin/product/productpage.php', 'template' => 'admin/product/product.tpl', 'children' => array(
+						0 => array(
+							'title' => 'Редактирование продукты', 'tag' => 'product_edit', 'class' => 'admin/product/producteditpage.php', 'template' => 'admin/product/product_edit.tpl', 'mode' => 'hidden', 'children' => array(
+								0 => array(
+									'title' => 'Изображение продукта', 'tag' => 'image_edit', 'class' => 'admin/product/imageeditpage.php', 'template' => 'admin/product/image_edit.tpl', 'mode' => 'hidden'
+								),
+								1 => array(
+									'title' => 'Редактирование характеристики продукта', 'tag' => 'technical_data_edit', 'class' => 'admin/product/technicaldataeditpage.php', 'template' => 'admin/product/technical_data_edit.tpl', 'mode' => 'hidden'
+								),
+								2 => array(
+									'title' => 'Редактирование комплектации продукта', 'tag' => 'equipment_edit', 'class' => 'admin/product/equipmenteditpage.php', 'template' => 'admin/product/equipment_edit.tpl', 'mode' => 'hidden'
+								),
+							),
+						),
+					),
+				),
+			),
+		),
+		5 => array(
+			'title' => 'Выставки', 'tag' => 'exhibition', 'class' => 'admin/exhibition/exhibitionpage.php', 'template' => 'admin/exhibition/exhibition.tpl', 'children' => array(
+				0 => array(
+					'title' => 'Редактирование выставки', 'tag' => 'exhibition_edit', 'class' => 'admin/exhibition/exhibitioneditpage.php', 'template' => 'admin/exhibition/exhibition_edit.tpl', 'mode' => 'hidden', 'children' => array(
+						0 => array(
+							'title' => 'Изображение с выставки', 'tag' => 'image_edit', 'class' => 'admin/exhibition/imageeditpage.php', 'template' => 'admin/exhibition/image_edit.tpl', 'mode' => 'hidden'
+						),
+					),
+				),
+			),
+		),
 	),
 );
 ?>

@@ -1,4 +1,5 @@
 <%IT:form id="<%=_table%>" begin="true" method="post" action="" /%>
+<%IT:Adminfilters /%>
 <div class="buttons_top">
 	<%it:input type="button" name="delete_selected" id="delete_selected" value="<%IT:Localizer string="btn_delete_selected" /%>" class="butt" confirm="<%IT:Localizer string="delete_confirm" /%>" /%>
 </div>

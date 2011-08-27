@@ -9,6 +9,7 @@ class CNotFoundPage extends CHTMLPage
 	public function on_page_init()
 	{
 		parent::on_page_init();
+		$this->tv['tnav_act_link'] = 'no';
 	}
 
 	public function parse_data()

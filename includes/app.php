@@ -17,6 +17,12 @@ define('MD_IMAGE_HEIGHT', 375);
 define('OR_IMAGE_WIDTH', 60);
 define('OR_IMAGE_HEIGHT', 90);
 
+
+define('RECORDSET_FIRST_ITEM', '- Выберите из списка -');
+
+define('TYPE_PRODUCT_IMAGE_PHOTO', 'photo');
+define('TYPE_PRODUCT_IMAGE_INSTRUCTION', 'instruction');
+
 if (file_exists( FUNCTION_PATH . 'functions.ram.debug.php'))
 	require_once(FUNCTION_PATH . 'functions.ram.debug.php');
 
@@ -68,6 +74,24 @@ class CApp extends CApplication
                 'Visual'=>'0',
                 'Title' => 'Images'
         );
+        $this->Modules['Inputs'] = array(
+                'ClassName' => 'CInputs',
+                'ClassPath' => CUSTOM_CLASSES_PATH . 'components/inputs.php',
+                'Visual'=>'0',
+                'Title' => 'Inputs'
+        );
+        $this->Modules['Products'] = array(
+                'ClassName' => 'CProducts',
+                'ClassPath' => CUSTOM_CLASSES_PATH . 'components/products.php',
+                'Visual'=>'0',
+                'Title' => 'Products'
+        );
+        $this->Modules['Exhibitions'] = array(
+                'ClassName' => 'CExhibitions',
+                'ClassPath' => CUSTOM_CLASSES_PATH . 'components/exhibitions.php',
+                'Visual'=>'0',
+                'Title' => 'Exhibitions'
+        );
    	}
     
     function on_page_init() {
@@ -106,7 +130,7 @@ class CApp extends CApplication
 function on_php_error($code, $message, $filename='', $linenumber=-1, $context=array()) {
     if (intval($code) != 2048)
     {
-        system_die('Error '.$code.' ('.$message.') occured in '.$filename.' at '.$linenumber.'');
+        //system_die('Error '.$code.' ('.$message.') occured in '.$filename.' at '.$linenumber.'');
     }
 }
 @ob_start();

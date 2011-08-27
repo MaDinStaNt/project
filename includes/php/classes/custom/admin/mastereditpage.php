@@ -61,7 +61,7 @@ class CMasterEditPage extends CAdminPage
 					}
 				}
 				else {
-					if ($this->tv['id'] = $mod->{'add_'.$this->_table}($this->tv)) {
+					if ($this->id = $this->tv['id'] = $mod->{'add_'.$this->_table}($this->tv)) {
 						$this->tv['_info'] = $this->Localizer->get_string('object_added');
 						$this->tv['_return_info'] =  $this->Application->Navi->getUri('parent', false);
 					}
@@ -73,13 +73,28 @@ class CMasterEditPage extends CAdminPage
 			else {
 				$this->tv['_errors'] = CValidator::get_errors();
 			}
-			$this->bind_data();
+			$this->custom_bind_data();
 		}
 		elseif (CForm::is_submit($this->_table, 'close')) {
 			$this->Application->CurrentPage->internalRedirect($this->Application->Navi->getUri('parent', false));
 		} 
 	
 		return true;
+	}
+	
+	function custom_bind_data() {
+		$this->tv['_table'] = $this->_table;
+
+		if ($this->id) {
+			if (!$this->_object_rs = $this->is_object_exists($this->id))
+			{
+				$this->tv['_errors'] = $this->Localizer->get_string('object_not_exist');
+				$this->h_content = '';
+			}
+			else {
+				row_to_vars($this->_object_rs, $this->tv);
+			}
+		}
 	}
 
 	function is_object_exists($id)

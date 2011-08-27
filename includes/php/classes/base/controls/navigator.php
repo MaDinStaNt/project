@@ -440,6 +440,9 @@ array sort_vars - array of sorting values (name_in_get => value_for_inserting_in
                                 $this->template->set_var('page', $c, $curr_item);
                                 $this->template->set_var('page_is_current', ($c == $this->page) ? true : false, $curr_item);
                                 $new_get_vars[$this->var_names['page']] = strval($c);
+                                //print_arr($req_uri);
+                                //print_arr($new_get_vars);
+                                //print_arr($curr_item);
                                 $this->template->set_var('page_link', get_url($req_uri, $new_get_vars), $curr_item);
                                 $c++;
                         }

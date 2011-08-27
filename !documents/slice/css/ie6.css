@@ -1,0 +1,19 @@
+.nav { margin-top:85px; }
+.nav-left li a { clear:both; overflow:hidden; padding:9px 5px 0 22px; }
+.gallery { margin:-20px 0 40px 0; }
+.gallery li { margin:0 40px 0 0;}
+ol#controls {
+    height:16px;
+    list-style:none;
+    position:absolute;
+	top:0;
+	margin:295px 0 0 0;
+    left:16px;
+}
+.search-list li input{
+	width: 12px;
+	margin:-3px 0 3px 0;
+	}
+
+.date { width:725px;}
+.detail-date { width:765px;} 
